@@ -1,0 +1,13 @@
+services:
+  db:
+    container_name: db
+    image: postgres:18-alpine3.22
+    environment:
+      POSTGRES_PASSWORD: password
+    restart: unless-stopped
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./db:/docker-entrypoint-initdb.d:ro
+
+volumes:
+  db-data:
