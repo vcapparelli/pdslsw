@@ -5,7 +5,11 @@ CREATE TABLE IF NOT EXISTS softwares (
 
 INSERT INTO softwares (name) VALUES
 ('Debian GNU/Linux'),
-('Docker'),
+('Podman'),
 ('Alpine Linux'),
-('Postgres')
+('Postgres'),
+('Python'),
+('FastAPI'),
+('Uvicorn'),
+('asyncpg')
 ;
