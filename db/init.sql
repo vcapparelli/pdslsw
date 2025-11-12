@@ -1,9 +1,9 @@
-CREATE TABLE IF NOT EXISTS programas (
+CREATE TABLE IF NOT EXISTS softwares (
 	id SERIAL PRIMARY KEY,
-	nome TEXT NOT NULL
+	name TEXT NOT NULL
 );
 
-INSERT INTO programas (nome) VALUES
+INSERT INTO softwares (name) VALUES
 ('Debian GNU/Linux'),
 ('Docker'),
 ('Alpine Linux'),
