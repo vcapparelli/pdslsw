@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
-import os, asyncpg
+import asyncpg
+import os
 
 
 app = FastAPI()
@@ -17,6 +18,6 @@ async def read_softwares():
         async with pool.acquire() as conn:
             query = "SELECT id, name FROM softwares ORDER BY id"
             rows = await conn.fetch(query)
-            return [ {"id": r["id"], "name": r["name"]} for r in rows]
+            return [{"id": r["id"], "name": r["name"]} for r in rows]
     except Exception:
         raise HTTPException(status_code=500, detail="Erro ao conectar com o Banco de Dados")
