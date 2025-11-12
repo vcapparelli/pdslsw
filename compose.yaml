@@ -8,6 +8,23 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
       - ./db:/docker-entrypoint-initdb.d:ro
+    networks:
+      - backend-db
+
+  backend:
+    container_name: backend
+    build: ./backend
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "postgres://postgres:password@db:5432/postgres"
+    ports:
+      - "8000:8000"
+    networks:
+      - backend-db
 
 volumes:
   db-data:
+
+networks:
+  backend-db:
