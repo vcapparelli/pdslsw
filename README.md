@@ -5,6 +5,6 @@
 **Como rodar**
 - docker-compose up --build
 
-Acessar o frontend (provisório): frontend/public/index.html
+Acessar o frontend: http://localhost:8080
 
 Acessar o backend: http://localhost:8000/softwares
