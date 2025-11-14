@@ -1,10 +1,18 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 import asyncpg
 import os
 
 
 app = FastAPI()
 DATABASE_URL = os.getenv('DATABASE_URL', 'postgres://postgres:password@db:5432/postgres')
+
+# Configurar CORS (Cross-Origin Resource Sharing)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+)
 
 
 async def get_pool():
