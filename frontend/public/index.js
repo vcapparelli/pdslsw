@@ -8,7 +8,7 @@ async function load(){
     ul.innerHTML = "";
     softwares.forEach(s => {
       const li = document.createElement("li");
-      li.textContent = "${s.id}: ${s.name}";
+      li.textContent = `${s.id}: ${s.name}`;
       ul.appendChild(li);
     });
   } catch (e) {
